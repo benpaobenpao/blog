@@ -18,3 +18,4 @@ protected/runtime/
 protected/config/
 static/node_modules/
 static/.sass-cache/
+static/public/html/
