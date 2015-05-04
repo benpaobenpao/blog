@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="民生银行-我们在行动" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div class="wrapper" id="wrapper">
+        <div class="item active item0"  id="item0">
+            1
+        </div>
+        <div class="item item1">
+            2
+        </div>
+        <div class="item item2">
+            3
+        </div>
+        <div class="item item3">
+            4
+        </div>
+    </div>
+    <script type="text/javascript" src="./js/touchScroll.min.js"></script>
+    <script>
+        function $(el){
+        return typeof el == 'string' ? document.querySelector(el) : el;
+    }
+    function $$(el){
+        return typeof el == 'string' ? document.querySelectorAll(el) : el;
+    }
+    
+        touchScroll = new touchScroll('#wrapper',{
+                        start:function(){
+                        },
+                        end:function(scroll){
+                            // var actives = $("#wrapper").getElementsByClassName("active");
+                            // if(actives.length>0){
+                            //     for(var i=0,l=actives.length;i<l;i++){
+                            //         var tmp = actives[i].getAttribute("class");
+                            //         tmp = tmp.replace("active","");
+                            //         actives[i].setAttribute("class", tmp);
+                            //     }
+                                
+                            // }
+
+                            // var curobj = $("#wrapper").getElementsByClassName("item")[touchScroll.current];
+                            // var tmp = curobj.getAttribute("class");
+                            // tmp += " active";
+                            // curobj.setAttribute("class",tmp);
+                        }
+                    });
+
+    </script>
+</body>
+</html>

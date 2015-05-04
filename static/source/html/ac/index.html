@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="民生银行-我们在行动" />
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta http-equiv="pragram" content="no-cache" />
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/edit.css">
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <title>我们结婚了</title>
+    <script type="text/javascript">
+        (function() {
+            if (/Android (\d+\.\d+)/.test(navigator.userAgent)) {
+                var version = parseFloat(RegExp.$1);
+                if (version > 2.3) {
+                    var phoneScale = parseInt(window.screen.width) / 640;
+                    document.write('<meta name="viewport" content="width=640, minimum-scale = ' + phoneScale + ', maximum-scale = ' + phoneScale + ', target-densitydpi=device-dpi">');
+                } else {
+                    document.write('<meta name="viewport" content="width=640, target-densitydpi=device-dpi">');
+                }
+            } else {
+                document.write('<meta name="viewport" content="width=640, user-scalable=no, target-densitydpi=device-dpi">');
+            }
+        })();
+    </script>
+</head>
+<body>
+    <div id="container">
+        <!-- 声音开始 -->
+        <div class="sound" id="musicTip">
+            <img src="./images/lab.png" alt="">
+            <img class="laSml sounD" src="./images/laSml.png" alt="">
+            <img class="laBig sounD" src="./images/laBig.png" alt="">
+            <img class="close sounD" src="./images/close.png" alt="">
+        </div>
+        <!-- 声音结束 -->
+
+        <div class="wrapper" id="wrapper">
+            <div class="item active item0"  id="item0" >
+                <img class="test1 animated bounceInDown" src="./images/pic1.jpg" alt="">
+                <span class="test2 animated zoomIn">邀请函</span>
+                <span class="test3 animated zoomIn">我们结婚吧</span>
+                <span class="test4 animated zoomIn">李耀民 & 李静娴</span>
+            </div>
+            <div class="item item1">
+                <span class="test1 animated bounceInRight">我们结婚吧</span>
+                <span class="test2 animated bounceInRight">我们结婚吧</span>
+                <span class="test3 animated bounceInRight">我们结婚吧</span>
+                <span class="test4 animated bounceInRight">我们结婚吧</span>
+                <span class="test5 animated bounceInRight">我们结婚吧</span>
+            </div>
+            <div class="item item2">
+                <img class="test2 animated fadeInRightBig" src="./images/man.png" alt="">
+                <img class="test3 animated fadeInLeftBig" src="./images/mam.png" alt="">
+                <img class="test1 animated bounceInDown" src="./images/xin.png" alt="">
+            </div>
+            <div class="item item3">
+                <div class="starbg"></div>
+                <div class="stars"></div>
+                <div class="cstars"></div>
+            </div>
+            <div class="item item4">
+                <div class="tian"></div> 
+                <div class="yun"></div>
+                <div class="cyun"></div> 
+            </div>
+            <div class="item item5">
+                <img class="test1 animated fadeInDownBig" src="./images/time.gif" alt="">
+                <img class="test2 animated zoomIn" src="./images/dxin.gif" alt="">
+            </div> 
+            <div class="item item6">
+                <div class="test1"></div>
+                <span class="test2 animated bounceInDown">我们结婚吧</span>
+            </div> 
+
+        </div>  
+    </div>
+    
+    
+    <!-- 声音开始 -->
+    <span class="tip" id="tip"></span>
+    <audio src="http://app.78.cn/weixin/ms/love.mp3" id="bgAudio" autoplay loop="loop"></audio>
+    <!-- 声音结束 -->
+
+    <!-- 加载开始 -->
+    <div class="loading" id="loading">
+        <div class="spinner">
+            <div class="spinner-container container1">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container2">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div class="spinner-container container3">
+                <div class="circle1"></div>
+                <div class="circle2"></div>
+                <div class="circle3"></div>
+                <div class="circle4"></div>
+            </div>
+            <div id="loadingNum">0%</div>
+        </div>
+    </div>
+    <!-- 加载结束 -->
+
+<script type="text/javascript" src="./js/touchScroll.min.js"></script>
+<script type="text/javascript">   
+    function $(el){
+        return typeof el == 'string' ? document.querySelector(el) : el;
+    }
+    function $$(el){
+        return typeof el == 'string' ? document.querySelectorAll(el) : el;
+    }
+    var EL ={
+        wrapper:$('#wrapper'),
+        item:$$('.item'),
+        loading:$('#loading'),
+        audio:$('#bgAudio'),
+        musicTip:$('#musicTip'),
+        audio:$('#bgAudio'),
+        //lastItem:$('#lastItem'),
+        tip:$('#tip')
+    }
+    var config = {
+        closeBGM:false,
+        loadImgIndex:0
+    };
+    var touchScroll;
+    var APP = {
+        init:function(){
+            this.loadImg(function(){
+                EL.loading.classList.add('loading-hide');
+                setTimeout(function(){
+                    EL.loading.parentNode.removeChild(EL.loading);
+                    touchScroll = new touchScroll('#wrapper',{
+                        isLoop: true,
+                        start:function(){
+                        },
+                        end:function(scroll){
+                            var actives = $("#wrapper").getElementsByClassName("active");
+                            if(actives.length>0){
+                                for(var i=0,l=actives.length;i<l;i++){
+                                    var tmp = actives[i].getAttribute("class");
+                                    tmp = tmp.replace("active","");
+                                    actives[i].setAttribute("class", tmp);
+                                }
+                                
+                            }
+
+                            var curobj = $("#wrapper").getElementsByClassName("item")[touchScroll.current];
+                            var tmp = curobj.getAttribute("class");
+                            tmp += " active";
+                            curobj.setAttribute("class",tmp);
+                        }
+                    });
+
+                },200);
+            })
+            
+           
+            
+        },  
+        loadImg:function (cbk){
+            var arr = document.getElementsByTagName("img");
+            
+            var l = arr.length;
+            cbk = cbk || function(){};
+            var args = null;
+            (function(){
+                var img = new Image();
+                 args = arguments;
+                
+                img.onload = function(){
+                    if(config.loadImgIndex == l - 1){
+                        cbk();
+                    }else{
+                        config.loadImgIndex++;
+                        $("#loadingNum").innerHTML = parseInt((config.loadImgIndex/l) * 100, 10) + "%";
+                        args.callee();
+                    }
+                } 
+                img.src = arr[config.loadImgIndex].getAttribute("src");
+                img.onerror = function(){
+                    setTimeout(cbk, 3000);
+                }
+            })();
+        }
+        
+    }   
+    APP.init();
+
+</script>
+</body>
+</html>

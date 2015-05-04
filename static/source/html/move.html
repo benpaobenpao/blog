@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../../plugs/jquery-2.1.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            width: 50px;
+            height: 50px;
+            background: #333;
+            cursor: move;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+        .box img{
+            width: 100%;
+            height: 100%
+        }
+        .box1{
+            left: 150px;
+            top: 100px;
+        }
+        .southeast {
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: se-resize;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .east{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: ew-resize;  /* not-allowed */
+            position: absolute;
+            right: 0;
+            top: 50%;
+            margin-top: -5px;
+        }
+        .northwest{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: se-resize;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .south{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: n-resize;
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            margin-left: -5px;
+        }
+        .southwest{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: sw-resize;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .west{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: ew-resize;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            margin-top: -5px;
+        }
+
+
+
+        .north{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: n-resize;
+            position: absolute;
+            left: 50%;
+            top: 0;
+            margin-left: -5px;
+        }
+
+        .northeast{
+            width: 10px;
+            height: 10px;
+            background: #c00;
+            overflow: hidden;
+            cursor: sw-resize;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+    <div class="box box1">
+        <img alt="" src="http://gtms04.alicdn.com/tps/i4/TB1y2pnHFXXXXaaaXXXBNVOLXXX-1600-350.jpg">
+    </div>
+    <script>
+        jQuery.noConflict();
+
+
+
+
+
+
+
+        jQuery(document).mousemove(function(e) {
+            if (!!this.move) {
+                var posix = !document.move_target ? {
+                        'x': 0,
+                        'y': 0
+                    } : document.move_target.posix,
+                    callback = document.call_down || function() {
+                        jQuery(this.move_target).css({
+                            'top': e.pageY - posix.y,
+                            'left': e.pageX - posix.x
+                        });
+                    };
+
+                callback.call(this, e, posix);
+            }
+        }).mouseup(function(e) {
+            if (!!this.move) {
+                var callback = document.call_up || function() {};
+                callback.call(this, e);
+                jQuery.extend(this, {
+                    'move': false,
+                    'move_target': null,
+                    'call_down': false,
+                    'call_up': false
+                });
+            }
+
+        });
+
+
+        // jQuery('#box').mousedown(function(e) {
+        //      var offset =jQuery(this).offset();
+
+        //      this.posix = {'x': e.pageX - offset.left, 'y': e.pageY - offset.top};
+        //     jQuery.extend(document, {'move': true, 'move_target': this});
+        //  });
+
+
+
+        var jQuerybox = jQuery('.box').each(function(){
+            var _this = jQuery(this);
+            jQuery(this).mousedown(function(e) {
+                var offset = jQuery(this).offset();
+
+                this.posix = {
+                    'x': e.pageX - offset.left,
+                    'y': e.pageY - offset.top
+                };
+                jQuery.extend(document, {
+                    'move': true,
+                    'move_target': this
+                });
+
+               
+
+                if(!_this.find(".east").length){
+                    jQuery(".box").find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").hide();
+                    var html = '<div class="southeast"></div><div class="east"></div><div class="northwest"></div><div class="south"></div><div class="southwest"></div><div class="west"></div><div class="north"></div><div class="northeast"></div>';
+                    _this.append(html);
+                    
+                }else{
+                    jQuery(".box").find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").hide();
+                    _this.find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").show();
+                }
+                
+
+            }).on('mousedown', 'img' , function(e){
+                e = e || window.event;
+                var offset = _this.offset();
+
+                console.log(e.target);
+
+                if(!_this.find(".east").length){
+                    jQuery(".box").find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").hide();
+                    var html = '<div class="southeast"></div><div class="east"></div><div class="northwest"></div><div class="south"></div><div class="southwest"></div><div class="west"></div><div class="north"></div><div class="northeast"></div>';
+                    _this.append(html);
+                    
+                }else{
+                    jQuery(".box").find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").hide();
+                    _this.find(".east,.northwest,.south,.southwest,.west,.north,.northeast,.southeast").show();
+                }
+
+                _this.posix = {
+                    'x': e.pageX - offset.left,
+                    'y': e.pageY - offset.top
+                };
+                jQuery.extend(document, {
+                    'move': true,
+                    'move_target': _this
+                });
+                return false;
+            }).on('mousedown', '.southeast', function(e) { 
+                e = e || window.event;
+
+              
+
+
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'width': Math.max(30, e.pageX - posix.x + posix.w),
+                            'height': Math.max(30, e.pageY - posix.y + posix.h)
+                        });
+                    }
+                });
+                return false;
+            }).on('mousedown' , '.east' , function(e){
+
+                console.log(e.target);
+
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                         
+                        _this.css({
+                            'width': Math.max(30, e.pageX - posix.x   + posix.w),
+                        });
+                    }
+                });
+
+                return false;
+            }).on('mousedown', '.northwest', function(e){
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                         console.log(posix.x, posix.y, e.pageX, e.pageY);
+                        _this.css({
+                            'width': Math.max(30, posix.x - e.pageX   + posix.w),
+                            'height': Math.max(30, posix.y - e.pageY  + posix.h),
+                            'left':  e.pageX, 
+                            'top':  e.pageY
+                        });
+                    }
+                });
+
+                return false;
+            }).on('mousedown', '.south', function(e) { 
+                e = e || window.event;
+
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'height': Math.max(30, e.pageY - posix.y + posix.h)
+                        });
+                    }
+                });
+                return false;
+            }).on('mousedown', '.southwest', function(e){
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'width': Math.max(30, posix.x - e.pageX   + posix.w),
+                            'height': Math.max(30, e.pageY - posix.y + posix.h),
+                            'left':  e.pageX
+                        });
+                    }
+                });
+
+                return false;
+            }).on('mousedown', '.west', function(e){
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'width': Math.max(30, posix.x - e.pageX   + posix.w),
+                            'left':  e.pageX, 
+                        });
+                    }
+                });
+
+                return false;
+            }).on('mousedown', '.north', function(e){
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'height': Math.max(30, posix.y -   e.pageY   + posix.h),
+                            'top':  e.pageY
+                        });
+                    }
+                });
+
+                return false;
+            }).on('mousedown', '.northeast', function(e){
+                var posix = {
+                    'w': _this.width(),
+                    'h': _this.height(), 
+                    'x': e.pageX,
+                    'y': e.pageY
+                };
+
+                jQuery.extend(document, {
+                    'move': true,
+                    'call_down': function(e) {
+                        _this.css({
+                            'width': Math.max(30, e.pageX - posix.x + posix.w),
+                            'height': Math.max(30, posix.y -   e.pageY + posix.h),
+                            'top':  e.pageY
+                        });
+                    }
+                });
+
+                return false;
+            });
+        });
+
+        
+
+
+    </script>
+</body>
+</html>

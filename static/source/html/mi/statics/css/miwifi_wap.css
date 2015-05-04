@@ -1,0 +1,143 @@
+@charset "utf-8";
+/* CSS Document for wap.html of MiWiFi, created on 2014-10-08 17:16 */
+/* Latest modified on 2014-10-21 16:05
+/* reset */
+body,h1,h2,h3,h4,h5,h6,p,dl,dd,ol,ul,menu,caption,th,td,form,fieldset,legend,input,button,textarea{margin:0;padding:0;-webkit-text-size-adjust:none}h1,h2,h3,h4,h5,h6{font-size:100%}ol,ul,menu{list-style:none}table{border-collapse:collapse;border-spacing:0;empty-cells:show;font-size:inherit}fieldset,img{border:0}cite,em{font-style:normal}input,button,textarea,select{font-size:100%}body,input,button,textarea,select,option,optgroup{font-size:12pt;line-height:1}a{text-decoration:none}article,aside,footer,header,hgroup,nav,section{display:block}
+/* global */
+html{-ms-touch-action: none;}
+body{-webkit-font-smoothing:antialiased;}
+/* 在页面中嵌入特殊字体 */
+@font-face {
+	font-family: 'DINOffcRegular';
+	src: url('../font/DINOffc.eot');
+	src: local('DINOffc Regular'),
+       local('DINOffc'),
+		   url('../font/DINOffc.ttf') format('truetype'),
+		   url('../font/DINOffc.otf') format('opentype'),
+		   url('../font/DINOffc.svg#DINOffc') format('svg');
+}
+/* Heading */
+.wapHeading{width:100%;height:58px;background:#323232;}
+.wapLogo{display:block;float:left;margin:18px 0 0 18px;width:89px;height:24px;background:url(../img/wf_miwifi.png) no-repeat;background-size:89px 24px;text-indent:-9999px;}
+.wapNav, .wapNav-index{float:right;margin:13px 18px 0 0;width:180px;height:30px;}
+.wapNav li, .wapNav-index div{width:60px;height:30px;float:left;}
+.wapnavBtn{display:block;color:#fff;text-align:center;line-height:33px;font-size:16px;border-radius:50px;}
+.wapActive{background-color:#28d;color:#fff;}
+/* Tabbing */
+.wapTabbing{width:100%;background:#28d;overflow:hidden;}
+.wapTabbing ul{width:100%;padding-top:18px;overflow:hidden;}
+.wapTabLi{width:33%;float:left;position:relative;height:100px;}
+.wapTabLi a{display:block;margin:0 auto;overflow:hidden;width:54px;height:54px;background-size:54px 108px;background-repeat:no-repeat;background-position:0 -54px;}
+.wapTabLi a.waptabActive{background-position:0 0;}
+.waptabR1d{background-image:url(../img/wf_newdl_R1D.png);}
+.waptabMini{background-image:url(../img/wf_newdl_MINI.png);}
+.waptabWifi{background-image:url(../img/wf_newdl_WIFI.png);}
+.wapTabLi p{font-size:12px;color:#bddcf5;text-align:center;margin-top:12px;}
+.wapTabLi p.waptabPActive{color:#fff;}
+.wapTabLi s{display:block;position:absolute;bottom:-1px;left:50%;margin-left:-7px;background:url(../img/wf_newdl_s.png) no-repeat;width:14px;height:7px;background-size:14px 7px;}
+.wapTabLi s.wapHide{display:none;}
+/* Bodying */
+.wapBodying div.wapShow{display:block;}
+.wapBodying div.wapHide{display:none;}
+.wapItem{margin:28px;min-height:40px;background-repeat:no-repeat;background-size:40px 40px;padding-left:48px;}
+.wapIntro{font-size:14px;color:#666;line-height:1.5em;}
+.wapDl{font-size:14px;color:#28d;margin-right:14px;line-height:1.5em;}
+.wapIcon_iPhone{background-image:url(../img/wf_dl_iphone.png);}
+.wapIcon_Android{background-image:url(../img/wf_dl_android.png);}
+.wapIcon_PC{background-image:url(../img/wf_dl_pc.png);}
+.wapIcon_Mac{background-image:url(../img/wf_dl_mac.png);}
+.wapIcon_ROMSta{background-image:url(../img/wf_dl_rom_sta.png);}
+.wapIcon_ROMDev{background-image:url(../img/wf_dl_rom_dev.png);}
+.wapIcon_MiniSta{background-image:url(../img/wf_dl_r1c_sta.png);}
+.wapIcon_MiniDev{background-image:url(../img/wf_dl_r1c_dev.png);}
+.wapCon_wifi{min-height:250px;}
+/* BottomNav */
+.wapBottomNav{width:100%;height:40px;padding-top:14px;border-top:1px solid #eee;border-bottom:1px solid #eee;}
+.wapBottomNav ul{width:180px;margin:0 auto;overflow:hidden;}
+.wapBottomNav ul li{width:60px;height:33px;float:left;}
+.wapBottomNav ul li a.wapnavBtn{color:#333;}
+.wapBottomNav ul li a.wapActive{background-color:#28d;color:#fff;}
+/* Footing */
+.wapFooting{width:100%;height:68px;}
+.wapFooting ul{width:110px;margin:18px auto 0;overflow:hidden;}
+.wapFooting ul li{text-align:center;font-size:12px;color:#666;}
+.wapFooting ul li.wapfootLeft{float:left;width:52px;}
+.wapFooting ul li.wapfootMid{float:left;width:6px;}
+.wapFooting ul li.wapfootRight{float:right;width:52px;}
+.wapfoot{color:#666;}
+.wapFooting ul li a.wapGrey{color:#999;}
+.wapfootP{font-size:12px;text-align:center;color:#999;margin:10px auto 0;}
+/* PlayItem */
+.wapPlayItem{margin:18px 18px 27px 18px;}
+.wapPlayTitle{font-size:18px;color:#333;margin-bottom:8px;}
+.wapPlayImg{width:100%;overflow:hidden;}
+.wapPlayImg img{display:block;border:none;border-radius:5px;}
+.wapPlayIntro{font-size:14px;color:#666;line-height:1.5em;margin:5px 0;}
+.wapPlayLink{font-size:14px;color:#28d;}
+/* PlayCommunity */
+.wapPlayCommunity{border-top:1px solid #eee;padding:45px 0;}
+.wapPlayCommTitle{text-align:center;color:#666;font-size:16px;}
+.wapPlayCommImg{width:64px;margin:10px auto;}
+.wapPlayCommIntro{font-size:12px;color:#999;line-height:1.5em;text-align:center;}
+.wapPlayCommLink{font-size:12px;text-align:center;margin-top:10px;}
+.wapPlayCommLink a{color:#28d;}
+/* wap_index */
+/* wapScreen */
+.wapScrn{width:100%;-webkit-box-sizing:border-box;box-sizing:border-box;}
+.wapScreenR1d{background-color:#4E4D4B;}
+.wapScreenMini{background-color:#28d;}
+.wapScreenWifi{background:url(../img/wapindex-wifi.jpg) 50% 10% no-repeat #fff;}
+.wapMiniContainer{padding:60px 0 10px;}
+.wapWifiContainer{padding:115px 0 10px;}
+.wapR1dImg{margin:30px auto 0;width:320px;height:272px;background:url(../img/wapindex-r1d2.jpg) 50% 0 no-repeat;background-size:320px 272px;}
+.wapMiniImg{display:block;margin:0 auto;width:480px;height:330px;background:url(../img/wapindex-mini.jpg) 50% 0 no-repeat;background-size:480px 330px;}
+.wapScrn h1{text-indent:-9999px;}
+.wapScrn h2{text-align:center;font-size:14px;font-weight:normal;margin:10px 0 5px;}
+.wapR1dH1{margin:0 auto;background:url(../img/wap_index_h1R1d.png) no-repeat;width:170px;height:34px;background-size:170px 34px;}
+.wapMiniH1{margin:0 auto;background:url(../img/wap_index_h1Mini.png) no-repeat;width:254px;height:38px;background-size:254px 38px;}
+.wapWifiH1{margin-left:20px;background:url(../img/wap_index_h1Wifi.png) no-repeat;width:193px;height:30px;background-size:193px 30px;}
+.wapR1dH2{color:#939b9c;}
+.wapMiniH2{color:#add4f2;}
+.wapScrn h2.wapWifiH2{text-align:left;margin-left:20px;color:#28d;line-height:1.5em;}
+.wapR1dLink{display:block;margin:0 auto 10px;width:65px;height:28px;font-size:12px;text-align:left;line-height:28px;color:#00bfff;background:url(../img/wap_index_icon.png) 100% 50% no-repeat;background-size:14px 14px;}
+.wapBigLink{display:block;margin:0px auto 12px;width:112px;height:30px;border:2px solid #04b8fb;border-radius:50px;text-align:center;line-height:30px;font-size:14px;color:#fff;}
+.wapScreenWifi a.wapBigLink{margin:8px 0 0 20px;color:#28d;}
+.wapArrow{display:block;width:100%;height:45px;text-indent:-9999px;background-size:24px 14px;}
+.wapArrowWhite{margin:20px auto 0;background:url(../img/wap_index_arrow.png) 50% 50% no-repeat;}
+.wapArrowBlue{position:absolute;bottom:100px;background:url(../img/wap_index_arrow_blue.png) 50% 50% no-repeat;}
+.section{position:relative;z-index:2;top:0;bottom:0;}
+.easing{-webkit-transition:all .5s ease-out;transition:all .5s ease-out;}
+
+/* Service */
+.wapService{width:100%;border-top:1px solid #eee;padding:50px 0 65px;}
+.wapService-index{width:100%;border-top:1px solid #eee;padding:35px 0 40px;}
+.wapServiceH1, .wapFocusH1{font-size:18px;font-weight:normal;color:#666;text-align:center;}
+.wapServiceImg{margin:20px auto;width:64px;height:64px;background:url(../img/wap_index_phone.png) no-repeat;background-size:64px 64px;}
+.wapService400{font-family:DINOffcRegular;text-align:center;font-size:20px;color:#565558;}
+.wapServiceIntro{margin-top:8px;}
+.wapGreyIntro{font-size:14px;color:#999;line-height:1.4em;text-align:center;}
+
+/* Focus */
+.wapFocus{width:100%;border-top:1px solid #eee;padding:50px 0 65px;}
+.wapFocus-index{width:100%;border-top:1px solid #eee;padding:35px 0 40px;}
+.wapFocusCon{margin:20px auto;width:162px;height:26px;}
+.wapFocusCon a{display:block;width:80px;height:26px;text-indent:-9999px;background-repeat:no-repeat;background-position:50% 50%;background-size:72px 50px;overflow:hidden;}
+.wapFocusWeixin{float:left;border-right:1px solid #eee;background-image:url(../img/wap_index_weixin.png);}
+.wapFocusWeibo{float:right;background-image:url(../img/wap_index_weibo.png);}
+
+/* Mask & Pop */
+.Pop{display:none;}
+.mask{position:absolute;z-index:10;width:100%;height:100%;background:rgba(0,0,0,.7);}
+.popClose{display:block;position:fixed!important;z-index:12;top:30px;right:30px;width:36px;height:36px;text-indent:-9999px;background:url(../img/wap_close.png) no-repeat;background-size:36px 36px;}
+
+.popBody{position:fixed!important;z-index:11;top:100px;left:50%;background:#fff;border-radius:6px;width:96%;margin-left:-48%;max-height:360px;overflow-y:scroll;border-bottom:20px solid #fff;border-top:20px solid #fff;}
+.popBody4Video{position:fixed!important;z-index:11;top:100px;left:50%;background:#fff;width:100%;margin-left:-50%;box-sizing:border-box;padding:5px;}
+.popBody4Video iframe{display:block;width:100%;}
+.popTitle{font-size:16px;font-weight:normal;color:#666;line-height:1.5em;padding:0 20px;}
+.loglink{color:#28d;text-decoration:underline;}
+.popLogContents{padding:20px;font-size:14px;line-height:1.5em;color:#666;}
+.popLogContents p.logtlt{font-weight:bold;}
+.popLogContents ol{overflow:hidden;zoom:1;padding-left:30px;}
+.popLogContents ol li{font-size:14px;color:#666;height:auto;width:100%;list-style-type:decimal;}
+
+.hasMove{animation:move 2s 1;-webkit-animation:move 2s 1;}
