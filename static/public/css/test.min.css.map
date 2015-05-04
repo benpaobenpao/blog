@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAGA,IAAI,CACA,IAAI,CCkDA,oDAA0C,CDjD9C,KAAK,CAAE,IAAI",
+"sources": ["../../source/scss/test.scss","../../source/scss/conf.scss"],
+"names": [],
+"file": "test.min.css"
+}

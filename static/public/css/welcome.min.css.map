@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAKI,eAAM,CACF,OAAO,CAAE,IAAI,CACb,iBAAC,CACG,OAAO,CAAE,KAAK,CACd,UAAU,CAAE,MAAM,CAClB,OAAO,CAAE,MAAM,CACf,SAAS,CAAE,IAAI,CACf,KAAK,CCUX,IAAO,CDTD,gBAAgB,CCgBtB,OAAO,CDdD,uBAAO,CACH,KAAK,CCiBf,IAAO,CDhBG,eAAe,CAAE,IAAI",
+"sources": ["../../source/scss/welcome.scss","../../source/scss/conf.scss"],
+"names": [],
+"file": "welcome.min.css"
+}
