@@ -1,0 +1,22 @@
+@charset "utf-8";
+@import "compass/css3";
+@import "conf.scss";
+
+.welcome{
+    .gcol3{
+        padding: 10px;
+        a{
+            display: block;
+            text-align: center;
+            padding: 60px 0;
+            font-size: 24px; 
+            color: $c1;
+            background-color: $c8;
+
+            &:hover{
+                color: $cc;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@charset "utf-8";
+@import "compass/css3";
+@import "conf.scss";
+
+.home{
+    .parTit{
+        color: $cc;
+        font-size: 16px;
+        margin-bottom: 10px; 
+    }
+    .parGame{
+        height: 240px;
+        // border: $border;
+        // margin-bottom: 20px;
+        overflow: hidden;
+        
+        .gcol3{
+            // border-right: $border;
+        }
+
+        .gcol5{
+            padding-right: 20px;
+            // border-right: $border;
+        }
+
+        .code{
+            display: block;
+            width: 90%;
+            height: 90%;
+            // margin: 0 auto;
+        } 
+        table{
+            width: 100%;
+            td{
+                border-bottom: $border;
+                text-align: center;
+            }
+        }
+    }
+    .parBlogs{
+        border: $border;
+        margin-bottom: 20px;
+        overflow: hidden;
+        .item{
+            border-top: $border;
+            margin-top: -1px;
+            padding: 8px 12px;
+            a{
+                color: $c1;
+                
+                &:hover{
+                    color: $cc;
+                }
+            }
+            .the-icons{
+                margin-right: 10px;
+            }
+            .time{
+                float: right;
+                color: $c5;
+                font-size: 12px;
+
+            }
+            .artilce{
+                padding-top: 10px;
+                margin-top: 10px;
+                border-top: $border;
+            }
+        }
+    }
+}

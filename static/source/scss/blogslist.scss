@@ -1,0 +1,44 @@
+@charset "utf-8";
+@import "compass/css3";
+@import "conf.scss";
+
+.blogsList{
+    .item{
+        border: $border;
+        margin-bottom: 10px;
+        .title{ 
+            padding: 10px;
+            border-bottom: $border;
+            background-color: $c9;
+            a{
+                color: $c1;
+                &:hover{
+                    color: transparentize($c1, 0.25);
+                }
+            }
+            .goodbad{
+                float: right;
+                >label{
+                    margin-left: 10px;
+                }
+            }
+            .edit{
+                margin-right: 16px;
+            }
+        }
+        .article{
+            padding: 10px;
+            border-bottom: $border; 
+        }
+        .tip{
+            padding: 10px;
+            font-size: 10px;
+            .author{
+                float: left;
+            }
+            .date{
+                float: right;
+            }
+        }
+    }
+}

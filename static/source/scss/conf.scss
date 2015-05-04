@@ -1,0 +1,74 @@
+@charset "utf-8";
+// 基础常量配置
+
+$black : #000000;
+$gray : #333333;
+$maroon : #800000;        // 栗色
+$green : #008000;         // 绿色
+$olive : #808000;         // 橄榄色
+$navy : #000080;          // 藏青色
+$purple : #800080;        // 紫色
+$teal : #008080;          // 凫蓝
+
+$silver : #c0c0c0;        // 银色
+$red : #ff0000;           // 红色
+$yellow : #ffff00;        // 黄色
+$blue : #0000ff;          // 蓝色
+$fuchsia : #ff00ff;       // 紫红
+$aqua : #00ffff;          // 浅绿色
+$white : #ffffff;         // 白色
+
+
+$c0 : #000000;         // 黑色
+$c1 : #333333;
+$c2 : #666666; 
+$c3 : #808080;
+$c4 : #999999;
+$c5 : #aaaaaa;
+$c6 : #cccccc;
+$c7 : #eeeeee;
+$c8 : #dfdfdf;
+$c9 : #fafafa;
+$c10 : #ffffff;
+
+$cc : #0066ff; 
+
+
+
+
+$s1  : 1;
+$s2  : 2;
+$s3  : 3;
+$s6  : 6;
+$s8  : 8;
+$s10 : 10;
+$s12 : 12;
+$s14 : 14;
+$s16 : 16;
+$s18 : 18;
+$s20 : 20;
+$s24 : 24;
+$s28 : 28;
+$s30 : 30;
+
+// 字体颜色|大小|样式配置
+$font : normal #{$s14}px/#{$s20}px Microsoft YaHei,SimSun,SimHei,arial;
+
+// 边框颜色|粗细|样式配置
+$border : 1px $c8 solid;
+ 
+// 背景颜色配置 
+$bg: $white;
+
+// input 默认设置   上下6px 左右20px
+
+
+// textarea 默认设置
+ 
+
+
+
+$gBorderColor: #cccccc !default;
+$gPaddingWidth: 16px !default;
+$gPaddingWidthM: 12px !default;
+$gPaddingWidthS: 8px !default;

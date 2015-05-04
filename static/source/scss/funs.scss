@@ -1,0 +1,59 @@
+@charset "utf-8";
+
+// 清除浮动
+@mixin fnClearfix(){
+    .clearfix{
+        &:before,&:after{
+            display: block;
+            content: " ";
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+    }
+}
+
+// 栅格定义
+@mixin fnContainer($width: 1200px){
+    .container{
+        width: $width;
+        margin: 0 auto;
+        &:before,&:after{
+            display: block;
+            content: " ";
+            height: 0;
+            clear: both;
+            visibility: hidden;
+        }
+        @for $i from 1 through 15{
+            .gcol#{$i} {
+                float: left;
+                width: $width/15*$i;
+            }
+        }
+        
+    }
+}
+
+
+// 按钮定义
+@mixin fnButton( $name , $bg , $fcolor){
+    .btn#{$name}{
+        display: inline-block;
+        color: $fcolor;
+        font-size: $s16+px;
+        padding: $s6+px $s20+px;
+        background: $bg; 
+        border: none;
+        margin: 0 $s10 + px;
+        cursor: pointer;
+        &:hover{
+            color: $fcolor;
+            background: transparentize($bg, 0.25); 
+            text-decoration: none;
+            // background: opacify($bg, 0.3);
+        }
+    }
+}
+
+// 

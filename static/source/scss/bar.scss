@@ -1,0 +1,49 @@
+@charset "utf-8";
+@import "compass/reset";
+@import "compass/css3";
+
+.loading-bar{
+    position: relative;
+    width: 1000px;
+    border: 1px solid #000;
+    margin: 30px auto  0;
+    @include user-select(none);
+    &:before,&:after{
+        clear: both;
+        content: " ";
+        display: block;
+        height: 0; 
+    }
+    .area{
+        float: left;
+        width: 10%;
+        height: 20px;
+        line-height: 20px;
+        text-align: center;
+        .num{
+            display: none;
+        }
+    }
+    .area-red{
+        background-color: #f00;
+    }
+    .area-yellow{
+        background-color: #ff0;
+        .num{
+            display: block;
+        }
+    }
+    .area-blue{
+        background-color: #00f;
+    }
+    .diamond{
+        position: absolute;
+        left: 45%;
+        top: -3px; 
+        width: 30px;
+        height: 25px;
+        margin-left: -15px;
+        background: url(../../images/1.png) no-repeat;
+    }
+}
+
